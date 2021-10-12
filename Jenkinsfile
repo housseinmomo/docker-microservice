@@ -10,7 +10,8 @@ node {
         }
 
          stage("Create package") {
-            sh 'mvn clean install'
+            sh 'mvn compile'
+            sh 'mvn package'
         }
 
             
