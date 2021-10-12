@@ -9,6 +9,10 @@ node {
             checkout scm
         }
 
+         stage("Create package") {
+            sh 'mvn clean install'
+        }
+
             
         stage("Build-image") {
             docker.build("$imageProject" , ".")
